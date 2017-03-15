@@ -72,22 +72,35 @@ class Profile extends React.Component {
 class CourseCollection extends React.Component {
   render () {
     return <div>
-          <Course title="Course 1"/>
-          <Course title="Course 2"/>
-          <Course title="Course 3"/>
+          <CourseOverview title="Course 1"/>
+          <CourseOverview title="Course 2"/>
+          <CourseOverview title="Course 3"/>
         </div>
       }
 }
 
-class Course extends React.Component {
+class CourseOverview extends React.Component {
 
   render () {
     return <div>
               <Panel header={this.props.title}>
+                <Course id="12345"/>
                 <CoursePoints />
                 <BadgeCollection />
               </Panel>
             </div>
+  }
+}
+
+class Course extends React.Component {
+  render() {
+    return(
+      <div>
+        <text>{this.props.id}</text>
+        <text>{this.props.title}</text>
+        <text>{this.props.description}</text>
+      </div>
+    )
   }
 }
 
@@ -121,6 +134,7 @@ class Badge extends React.Component {
   render () {
     return (
       <div>
+            <text>{this.props.badgeID}</text>
             <Row><img src={this.props.imgURL} alt={this.props.badgeName} className="badge-img" /></Row>
             <Row><text>{this.props.badgeName}</text></Row>
       </div>
@@ -156,6 +170,23 @@ class CoursePoints extends React.Component {
     );
   }
 }
+
+class Assignment extends React.Component {
+  render () {
+    return (
+      <div>
+        <text>{this.props.title}</text>
+        <text>{this.props.topic}</text>
+        <textarea>{this.props.description}</textarea>
+        <text>{this.props.maxPoints}</text>
+        <Badge />
+      </div>
+
+    );
+  }
+}
+
+
 
 
 class App extends Component {
