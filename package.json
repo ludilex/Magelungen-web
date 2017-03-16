@@ -5,8 +5,12 @@
   "dependencies": {
     "axios": "^0.15.3",
     "react": "^15.4.2",
+    "react-axios": "0.0.9",
     "react-bootstrap": "^0.30.8",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-google-login": "^2.8.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.2.0",
